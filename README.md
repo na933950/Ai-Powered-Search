@@ -2,6 +2,19 @@
 
 This is an AI search tool powered by OpenAPI GPT and Metaphor to streamline search results with an AI-generated description to make up for nonsensical HTML content.
 
+Technologies used to create this project include: 
+* ReactJS + Vite
+* TypeScript
+* JavaScript
+* Node.js
+* Express.js
+* Axios
+* Metaphor API
+* OpenAI API
+* Postman
+
+# Usage 
+
 To use, clone the repository and and run ```npm i```.
 
 Additionally, you need your own keys for the OpenAI API and Metaphor API. Please add the following config.env file:
@@ -21,7 +34,7 @@ Then run:
 ```
 And click on the localhost.
 
-Documentation:
+# Documentation
 
 Hitting "Enter" or pressing the search button sends a ```GET``` Request to the Node server which is running on port 3000 to the route:
 ```127.0.0.1:3000/api/searches?search=[YOUR_SLUGIFIED_SEARCH]```
