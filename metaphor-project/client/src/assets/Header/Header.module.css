@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    gap: 2rem;
+    padding: 2rem;
+    min-height: 20vh;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+
+.queries {
+    color: rgb(163, 163, 163);
+}

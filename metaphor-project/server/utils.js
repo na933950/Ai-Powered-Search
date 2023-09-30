@@ -22,7 +22,7 @@ exports.getContent = async (url, limit) => {
 
 exports.getRelevance = async (query, url, content) => {  
   try {
-    const GPTquery = `I searched this query: ${query} and got this url: ${url} and content: ${content} back. Why may this website help me answer my query?`;
+    const GPTquery = `I searched this query: ${query} and got this url: ${url} and content: ${content} back. Why may this website help me answer my query? If you can, use specifics from the website content`;
     const completion = await openai.chat.completions.create({
       messages: [{ role: "system", content: GPTquery }],
       model: "gpt-3.5-turbo",
