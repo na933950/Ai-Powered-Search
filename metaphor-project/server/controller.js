@@ -13,11 +13,17 @@ exports.search = async (req, res) => {
     if (response && response.results) {
       //Getting content from the documents to pass into GPT
       const contentPromises = response.results.map(async (result) => {
-        const content = await getContent(result.url, 500);
+        const content = await metaphor.getContents([result.id]);
+        console.log(content.contents[0].extract)
+        return {
+          ...result,
+          content: content.contents[0].extract,
+        };
+        /*const content = await getContent(result.url, 500);
         return {
           ...result,
           content: content,
-        };
+        };*/
       });
 
       const newData = await Promise.all(contentPromises);
