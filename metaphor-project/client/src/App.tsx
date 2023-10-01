@@ -9,12 +9,22 @@ import { BeatLoader } from "react-spinners";
 function App() {
   const [response, setResponse] = useState<QueryResult[]>();
   const [isLoading, setIsLoading] = useState(false);
+  const scroll = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    })
+  }
 
   return (
-    <div className={styles.container}>
-      {response ? <Header responseExists={true} /> : <Header responseExists={false}/>}
-      <SearchBar setResponse={setResponse} setIsLoading={setIsLoading}/>
-      {isLoading ? <BeatLoader className={styles.loader} color="#36d7b7" /> : null}
+    <div className={styles.globalContainer}>
+      <div className={styles.container}>
+        <Header responseExists={false}></Header>
+        <SearchBar setResponse={setResponse} setIsLoading={setIsLoading} scroll={scroll}/>
+        {isLoading ? (
+          <BeatLoader className={styles.loader} color="#36d7b7" />
+        ) : null}
+      </div>
       {response ? <SiteList queryResults={response} /> : null}
     </div>
   );

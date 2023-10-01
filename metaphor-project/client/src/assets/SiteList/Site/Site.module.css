@@ -8,7 +8,7 @@
     color: white;
     gap: 1rem;
     justify-content: space-between;
-    border-top: rgb(116, 116, 116) solid 1px;
+    border-top: 1px solid gray;
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
@@ -33,7 +33,7 @@
 
 .content {
     color: rgb(179, 179, 179);
-    max-width: 100%;
+    max-width: 80%;
     overflow-wrap: break-word;
     word-wrap: break-word;
 }

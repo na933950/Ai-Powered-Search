@@ -3,5 +3,5 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
-    padding-top: 2rem;
+    background-color: rgb(26, 26, 32);
 }

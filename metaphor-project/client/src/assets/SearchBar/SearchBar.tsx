@@ -10,9 +10,10 @@ import { QueryResult } from "../utils/responseData";
 interface Props {
   setResponse: (response: QueryResult[]) => void;
   setIsLoading: (isLoading: boolean) => void;
+  scroll: () => void;
 }
 
-const SearchBar = ({ setResponse, setIsLoading }: Props) => {
+const SearchBar = ({ setResponse, setIsLoading, scroll }: Props) => {
   const [query, setQuery] = useState("");
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -32,6 +33,7 @@ const SearchBar = ({ setResponse, setIsLoading }: Props) => {
         //@ts-ignore
         setResponse(res.data.data.results);
         setIsLoading(false);
+        setTimeout(scroll, 100);
       })
       .catch((err: AxiosError) => {
         console.log(err);
