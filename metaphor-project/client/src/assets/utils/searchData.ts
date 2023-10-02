@@ -16,7 +16,7 @@ interface Data {
 
 interface ResponseData {
     status: string,
-    data: Data[];
+    data: Data;
 }
 
 export default ResponseData;
