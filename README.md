@@ -45,7 +45,7 @@ And click on the localhost.
 # Documentation
 
 Hitting "Enter" or pressing the search button sends a `GET` Request to the Node server which is running on port 3000 to the route:
-`127.0.0.1:3000/api/searches?search=[YOUR_SLUGIFIED_SEARCH]`
+`127.0.0.1:3000/api/{searches|synthesis}?search=[YOUR_SLUGIFIED_SEARCH]`
 
 If you would like to test out the route but don't have API keys, navigate as follows:
 
