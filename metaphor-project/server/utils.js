@@ -20,7 +20,7 @@ exports.getContent = async (url, limit) => {
   }
 };
 
-exports.getRelevance = async (query, url, content) => {  
+exports.getRelevance = async (query, url, content) => {
   try {
     const GPTquery = `I searched this query: ${query} and got this url: ${url} and content: ${content} back. Why may this website help me answer my query? If you can, use specifics from the website content`;
     const completion = await openai.chat.completions.create({
@@ -29,6 +29,24 @@ exports.getRelevance = async (query, url, content) => {
     });
     return completion.choices[0].message.content;
   } catch (err) {
-    return 'Hmmm it seems like there was an error in having our AI analyze this site!'
+    console.log(err);
+    return "Hmmm it seems like there was an error in having our AI analyze this site!";
+  }
+};
+
+exports.getSynthesis= async (search, res) => {
+  try {
+    let sources = `I searched the following: ${search} and got a bunch of my responses. You are a helpful assistant. Using the following search results, synthesize the results and return an answer to my question using the sources. You should cite sources in your answer as if you were responding to an analytical essay prompt and put their URLs in as well:\n\n`;
+    res.forEach((element) => {
+      sources += `Source URL: ${element.url}, Source content: ${element.content}\n\n`;
+    });
+    const completion = await openai.chat.completions.create({
+      messages: [{role: "system", content: sources}],
+      model: "gpt-3.5-turbo",
+    });
+    return completion.choices[0].message.content;
+  } catch (err) {
+    console.log(err);
+    return "Hmmmmm it seems like there was an error in having our AI synthesize this data!";
   }
 };

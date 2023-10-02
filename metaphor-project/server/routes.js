@@ -1,9 +1,12 @@
 const express = require('express');
-const { search, test } = require('./controller');
+const { search, testSearch, synthesize, testSynthesis } = require('./controller');
 
 const router = express.Router();
 
 router.route('/searches').get(search);
-router.route('/test').get(test);
+router.route('/test-searches').get(testSearch);
+
+router.route('/synthesis').get(synthesize);
+router.route('/test-synthesis').get(testSynthesis);
 
 module.exports = router;
