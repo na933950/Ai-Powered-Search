@@ -2,6 +2,11 @@
 
 This is an AI search tool powered by OpenAPI GPT and Metaphor to streamline search results with an AI-generated description to make up for nonsensical HTML content. It also has the ability to synthesize the search results in a long format with MLA-style citations at the bottom. You can switch between these two options. Please allow for some processing time after you search.
 
+![Screenshot 2023-10-02 172616](https://github.com/na933950/Ai-Powered-Search/assets/51889372/7e300852-0a90-4d61-a253-706186dab2ac)
+![Screenshot 2023-10-02 172728](https://github.com/na933950/Ai-Powered-Search/assets/51889372/9059dea8-6d5d-40d4-943a-5bdab748436f)
+![Screenshot 2023-10-02 172917](https://github.com/na933950/Ai-Powered-Search/assets/51889372/ed9ab9b1-a3bb-427b-9a06-c335f3b231c2)
+![Screenshot 2023-10-02 172952](https://github.com/na933950/Ai-Powered-Search/assets/51889372/8770addb-9f26-4dac-84c1-6426a7ecf777)
+
 Technologies used to create this project include:
 
 - ReactJS + Vite
